@@ -1,0 +1,52 @@
+@mixin button($bg-color, $font-family) {
+  border-radius: $border-radius;
+  padding: calc(#{$padding / 2});
+  background-color: $bg-color;
+  font-family: $font-family;
+  color: $primary;
+  cursor: pointer;
+  border: 1px solid $tertiary;
+  text-transform: uppercase;
+
+  &:hover {
+    background-color: $primary;
+    color: $bg-color;
+  }
+}
+
+$primary: #CF649A;
+$secondary: lightgoldenrodyellow;
+$tertiary: lightgray;
+$padding: 1rem;
+$margin: 0.5rem;
+$primary-font-family: Arial, Helvetica, sans-serif;
+$border-radius: 3px;
+
+
+body {
+  font-family: $primary-font-family;
+  max-width: 1000px;
+  margin: auto;
+}
+
+h1 { 
+  text-align: center;
+  color: $primary;
+}
+
+section {
+  border: 1px solid $tertiary;
+  border-radius: $border-radius;
+  padding: $padding;
+  margin-top: $margin;
+  background-color: $secondary;
+  
+  &.main-section p {
+    font-weight: bold;
+    text-align: center;
+  }
+}
+
+button {
+  @include button(white, $primary-font-family)
+}
